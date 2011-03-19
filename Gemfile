@@ -4,6 +4,7 @@ gem 'rails', '3.0.5'
 gem 'cucumber-rails'
 gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
 gem 'devise'
+gem 'showoff'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
