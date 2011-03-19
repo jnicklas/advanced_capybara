@@ -1,0 +1,11 @@
+{
+  "name": "Advanced acceptance testing with Capybara",
+  "sections": [
+    {
+      "section":"intro"
+    },
+    {
+      "section":"interaction"
+    }
+  ]
+}

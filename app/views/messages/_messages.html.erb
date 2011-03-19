@@ -1,0 +1,6 @@
+<% Message.recent.each do |message| %>
+  <li>
+    <h3><%= message.message %></h3>
+    <p>by <%= message.user.email %></p>
+  </li>
+<% end %>
