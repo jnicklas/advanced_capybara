@@ -4,7 +4,12 @@ gem 'rails', '3.0.5'
 gem 'cucumber-rails'
 gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
 gem 'devise'
-gem 'showoff'
+gem 'database_cleaner'
+gem 'rspec-rails'
+
+group :talk do
+  gem 'showoff'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
