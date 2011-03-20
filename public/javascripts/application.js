@@ -1,3 +1,7 @@
+jQuery.ajaxSetup({
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
 $(function() {
   $('#new_message').each(function() {
     var form = $(this)
@@ -6,14 +10,21 @@ $(function() {
         url: form.attr('action'),
         data: form.serialize(),
         type: 'POST',
-        accepts: 'text/javascript',
         success: function(data) {
-          console.log(data)
-          console.log($('#messages'))
           $('#messages').html(data);
         }
       });
       return false;
     });
   });
+
+  setInterval(function() {
+    $.ajax({
+      url: '/',
+      data: {},
+      success: function(data) {
+        $('#messages').html(data);
+      }
+    });
+  }, 1000);
 });
