@@ -1,5 +1,6 @@
 !SLIDE
-# Advanced acceptance testing with Capybara
+# Advanced acceptance testing
+# with Capybara
 
 !SLIDE center
 
@@ -51,7 +52,7 @@
 
 !SLIDE
 
-# Cucumber
+## Cucumber
 
 !SLIDE
 

@@ -1,10 +1,13 @@
 Given /^I am signed in$/ do
-  username = Capybara.session_name
-  User.create!(:username => username, :email => "#{username}@elabs.se", :password => 'capybara')
-  visit('/')
-  fill_in 'Username', :with => username
-  fill_in 'Password', :with => 'capybara'
-  click_on 'Sign in'
+  User.create!(
+    :username => Capybara.session_name,
+    :email => "#{Capybara.session_name}@elabs.se",
+    :password => "capybara"
+  )
+  visit("/")
+  fill_in "Username", :with => Capybara.session_name
+  fill_in "Password", :with => "capybara"
+  click_on "Sign in"
 end
 
 When /^I send the message "([^"]*)"$/ do |message|
