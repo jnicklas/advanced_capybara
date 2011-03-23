@@ -1,3 +1,7 @@
+Given /^I am on the homepage$/ do
+  visit("/")
+end
+
 Given /^I am signed in$/ do
   User.create!(
     :username => Capybara.session_name,
@@ -10,17 +14,7 @@ Given /^I am signed in$/ do
   click_on "Sign in"
 end
 
-When /^I send the message "([^"]*)"$/ do |message|
-  fill_in 'New message', :with => message
-  click_on 'Send'
-end
-
 Then /^(.*) as "([^"]*)"$/ do |step, username|
   Capybara.session_name = username
   And step
 end
-
-Then /^I should see the message "([^"]*)"$/ do |message|
-  page.should have_selector('#messages li', :text => message)
-end
-
