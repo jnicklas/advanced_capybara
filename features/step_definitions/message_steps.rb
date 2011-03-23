@@ -1,3 +1,18 @@
+Capybara.add_selector :message do
+  xpath { |message| ".//ul[@id='messages']/li[contains(./h3, '#{message}')]" }
+  failure_message do |node, selector|
+    others = node.all('#messages > li > h3').map { |node| %("#{node.text}") }
+    %(No such message "#{selector.locator}"\n\nOther messages: #{others.to_sentence})
+  end
+end
+
+module MessageStepsHelper
+  def have_message(message)
+    have_selector(:message, message)
+  end
+end
+World(MessageStepsHelper)
+
 When /^I send the message "([^"]*)"$/ do |message|
   click_on 'New message'
   fill_in 'New message', :with => message
@@ -5,7 +20,7 @@ When /^I send the message "([^"]*)"$/ do |message|
 end
 
 Then /^I should see the message "([^"]*)"$/ do |message|
-  page.should have_selector('#messages li', :text => message)
+  page.should have_message(message)
 end
 
 Given /^the user "([^"]*)" has posted the message "([^"]*)"$/ do |username, message|
@@ -19,7 +34,7 @@ Given /^the user "([^"]*)" has posted the message "([^"]*)"$/ do |username, mess
 end
 
 When /^I reply to the message "([^"]*)" with "([^"]*)"$/ do |message, reply|
-  within "#messages li", :text => message do
+  within :message, message do
     click_on "Reply"
     fill_in "New message", :with => reply
     click_on "Send"
@@ -27,7 +42,7 @@ When /^I reply to the message "([^"]*)" with "([^"]*)"$/ do |message, reply|
 end
 
 When /^(.*) for the message "([^"]*)"$/ do |step, message|
-  within "#messages li", :text => message do
+  within :message, message do
     And step
   end
 end
