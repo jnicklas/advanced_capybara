@@ -1,5 +1,6 @@
 body {
   font-family: 'Akkurat', 'sans-serif';
+  color: white;
 }
 h1 {
   font-family: 'League Gothic';
@@ -17,11 +18,31 @@ ul li {
 }
 
 .slide {
+  background: url('green.png') center no-repeat;
+}
+.slide:first-child {
+  background: url('logo.png') 850px 40px no-repeat, url('splash.png') center no-repeat;
+}
+.slide:first-child h1 {
+  text-align: left;
+  padding-left: 50px;
+  margin: 20px 0;
 }
 
-pre {
+.slide:first-child h3 {
+  text-align: left;
+  padding-left: 50px;
+  margin: 200px 0 0;
+}
+
+.slide .center img {
+  height: 90%;
+}
+
+pre, pre.sh_sourceCode {
   font-size: 18px;
   margin: 20px;
   padding: 20px;
   font-family: 'Monaco';
+  background: rgba(255,255,255,0.2);
 }

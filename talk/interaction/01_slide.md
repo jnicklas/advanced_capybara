@@ -41,6 +41,16 @@
 !SLIDE code
 
     @@@ruby
+    # Alternate version
+    Then /^(.*) as "([^"]*)"$/ do |step, username|
+      using_session(username) do
+        And step
+      end
+    end
+
+!SLIDE code
+
+    @@@ruby
     When /^I send the message "([^"]*)"$/ do |message|
       fill_in 'New message', :with => message
       click_on 'Send'

@@ -1,6 +1,9 @@
-!SLIDE
+!SLIDE splash
+
 # Advanced acceptance testing
 # with Capybara
+
+### Jonas Nicklas – @jonicklas
 
 !SLIDE center
 
