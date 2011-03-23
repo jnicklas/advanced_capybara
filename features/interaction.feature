@@ -1,15 +1,7 @@
-Feature:
-
-  Scenario: Add a post
-    Given I am signed in as "jonas"
-    When I send the message "Hello CukeUp"
-    Then I should see the message "Hello CukeUp"
-
-  @javascript
-  Scenario: Add a post with JS
-    Given I am signed in as "jonas"
-    When I send the message "Hello CukeUp"
-    Then I should see the message "Hello CukeUp"
+Feature: Interaction
+  In order to connect with other people
+  As a user
+  I want to immediately see their posts
 
   @javascript
   Scenario: See live updates of posts
