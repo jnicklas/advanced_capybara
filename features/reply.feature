@@ -3,12 +3,14 @@ Feature: Replying to a message
   As a user
   I want to reply to someones message
 
-  Scenario: Add a post
+  @javascript
+  Scenario: reply to a posAdd a post
     Given the user "jonas" has posted the message "Hello CukeUp"
     And I am signed in as "peter"
     When I reply to the message "Hello CukeUp" with "Hello Jonas"
     Then I should see the message "Hello Jonas"
 
+  @javascript
   Scenario: click the "in reply to" link to see the original message highlighted
     Given the user "jonas" has posted the message "Hello CukeUp"
     And I am signed in as "peter"

@@ -1,26 +1,39 @@
 $(function() {
-  $('#new_message').each(function() {
-    var form = $(this)
-    form.submit(function() {
-      $.ajax({
-        url: form.attr('action'),
-        data: form.serialize(),
-        type: 'POST',
-        success: function(data) {
-          $('#messages').html(data);
-        }
-      });
-      return false;
-    });
+  $('a.new').click(function() {
+    var link = $(this);
+    $.get(link.attr('href'), {}, function(data) {
+      $('form.new_message').remove();
+      link.after(data);
+    }, 'html');
+    return false;
   });
 
-  setInterval(function() {
-    $.ajax({
-      url: '/',
-      data: {},
-      success: function(data) {
-        $('#messages').html(data);
-      }
+  var Message = function() {
+    var message = $(this);
+    message.find('.reply').click(function() {
+      $.get($(this).attr('href'), {}, function(data) {
+        $('form.new_message').remove();
+        message.append(data);
+      }, 'html');
+      return false;
     });
+
+    message.find('.in-reply-to').click(function() {
+      $($(this).attr('href')).addClass('highlighted');
+    });
+  }
+
+  $('#messages li').each(Message);
+
+  setInterval(function() {
+    $.get('/', {}, function(data) {
+      $(data).find('li').each(function() {
+        var newMessage = $(this);
+        if(!$('#' + newMessage.attr('id')).length) {
+          $('#messages').prepend(newMessage);
+          Message(newMessage);
+        }
+      });
+    }, 'html');
   }, 1000);
 });

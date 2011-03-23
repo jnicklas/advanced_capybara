@@ -75,8 +75,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.6)
     nokogiri (1.4.4)
+    pg (0.10.1)
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.13)
@@ -144,7 +144,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
-  mysql2
+  pg
   rails (= 3.0.5)
   rspec-rails
   showoff

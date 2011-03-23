@@ -1,0 +1,6 @@
+<h3><%= message.message %></h3>
+<p>by <%= message.user.username %></p>
+<% if message.reply_to_message %>
+  <p><%= link_to "In reply to", "#" + dom_id(message.reply_to_message), :class => 'in-reply-to' %></p>
+<% end %>
+<p><%= link_to 'Reply', new_message_path(:reply_to => message), :class => 'reply' %></p>

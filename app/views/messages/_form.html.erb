@@ -1,0 +1,8 @@
+<%= form_for @message do |f| %>
+  <p><%= f.label :message, 'New message' %></p>
+  <p><%= f.text_area :message, :rows => 4 %></p>
+  <p>
+    <%= f.hidden_field :reply_to_message_id, :value => @reply_to.id if @reply_to %>
+    <%= f.submit "Send" %>
+  </p>
+<% end %>

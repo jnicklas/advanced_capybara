@@ -2,7 +2,7 @@ Given /^I am on the homepage$/ do
   visit("/")
 end
 
-Given /^I click on "([^"]*)"$/ do |link|
+Given /^I click "([^"]*)"$/ do |link|
   click_on(link)
 end
 

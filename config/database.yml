@@ -1,12 +1,12 @@
 development: &DEFAULT
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
-  pool: 5
-  username: root
-  password:
-  host: 127.0.0.1
   database: advanced_capybara_dev
+  pool: 5
+  username: elabs
+  password:
+  min_messages: warning
 
 test:
   <<: *DEFAULT
