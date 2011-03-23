@@ -1,3 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #messages li.highlighted {
   background: yellow;
+}
+
+#page {
+  width:500px;
+  margin: 20px auto 50px;
+  padding: 20px;
+  background: #f0f0f0;
+}
+
+#page h1 {
+  margin: 0 0 30px;
+
+}
+
+#messages {
+  margin: 20px 0;
+  list-style: none;
+}
+
+#messages li {
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 5px;
 }
