@@ -2,6 +2,10 @@ Given /^I am on the homepage$/ do
   visit("/")
 end
 
+Given /^I click on "([^"]*)"$/ do |link|
+  click_on(link)
+end
+
 Given /^I am signed in$/ do
   User.create!(
     :username => Capybara.session_name,
