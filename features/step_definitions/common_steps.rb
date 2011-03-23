@@ -1,8 +1,8 @@
 Given /^I am signed in$/ do
-  email = "#{Capybara.session_name}@elabs.se"
-  User.create!(:email => email, :password => 'capybara')
+  username = Capybara.session_name
+  User.create!(:username => username, :email => "#{username}@elabs.se", :password => 'capybara')
   visit('/')
-  fill_in 'Email', :with => email
+  fill_in 'Username', :with => username
   fill_in 'Password', :with => 'capybara'
   click_on 'Sign in'
 end
