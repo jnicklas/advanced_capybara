@@ -44,6 +44,6 @@ pre, pre.sh_sourceCode {
   margin: 20px;
   padding: 20px;
   font-family: 'Monaco';
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.8);
 }
