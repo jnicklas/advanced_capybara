@@ -4,7 +4,7 @@ Feature: Replying to a message
   I want to reply to someones message
 
   @javascript
-  Scenario: reply to a posAdd a post
+  Scenario: reply to a post
     Given the user "jonas" has posted the message "Hello CukeUp"
     And I am signed in as "peter"
     When I reply to the message "Hello CukeUp" with "Hello Jonas"
