@@ -1,0 +1,27 @@
+body {
+  font-family: 'Akkurat', 'sans-serif';
+}
+h1 {
+  font-family: 'League Gothic';
+  font-size: 84px;
+}
+h2 {
+  font-family: 'League Gothic';
+  font-size: 54px;
+}
+h3 {
+  font-size: 24px;
+}
+ul li {
+  font-size: 24px;
+}
+
+.slide {
+}
+
+pre {
+  font-size: 18px;
+  margin: 20px;
+  padding: 20px;
+  font-family: 'Monaco';
+}
