@@ -20,19 +20,24 @@ ul li {
 .slide {
   background: url('green.png') center no-repeat;
 }
-.slide:first-child {
+.slide:first-child, .slide:last-child {
   background: url('logo.png') 850px 40px no-repeat, url('splash.png') center no-repeat;
 }
-.slide:first-child h1 {
+.slide:first-child h1, .slide:last-child h1 {
   text-align: left;
   padding-left: 50px;
   margin: 20px 0;
 }
 
-.slide:first-child h3 {
+.slide:first-child h3, .slide:last-child h3 {
   text-align: left;
   padding-left: 50px;
   margin: 200px 0 0;
+}
+.slide:first-child h4, .slide:last-child h4 {
+  text-align: left;
+  padding-left: 50px;
+  margin: 20px 0 0;
 }
 
 .slide .center img {
